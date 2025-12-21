@@ -52,15 +52,19 @@ bot.on("message", ctx => {
             if (grynchVerify(message)) {
                 user.state = "waiting";
                 let replyText = "Кажется кто-то хотел себе новый зарядник? теперь он МОЙ, ахахАХАХА!!!"
-                // отправка видео steal.mp4
+                ctx.replyWithVideo({
+                    source: './videos/steal.mp4'
+                }, {
+                    caption: replyText
+                });
                 setTimeout(() => {
                     const photoStream = fs.createReadStream('./imgs/olen.png');
-                    let replyMessage2 = 'Привет\n я генномодифицированый пес санты!'
+                    let replyMessage2 = 'Привет\nя генномодифицированый пес санты!'
                     ctx.replyWithPhoto({ source: photoStream }, { caption: replyMessage2 });
-                }, 10000);
+                }, 20000);
                 setTimeout(() => {
                     ctx.reply("Хотя кого я обманываю, я просто олень!")
-                }, 13000);
+                }, 25000);
                 setTimeout(() => {
                     const keyboardMarkup = {
                         reply_markup: {
@@ -69,8 +73,8 @@ bot.on("message", ctx => {
                             one_time_keyboard: true // Optional: keeps the keyboard after a button is pressed
                         }
                     };
-                    ctx.reply("Гринч оставил следы! я могу его выследить! для этого мне понадобится твоя помощь!\n тебе нужно будет решить две простые задачки, поспеши!", keyboardMarkup)
-                }, 16500);
+                    ctx.reply("Гринч оставил следы! я могу его выследить! для этого мне понадобится твоя помощь!\nтебе нужно будет решить две простые задачки, поспеши!", keyboardMarkup)
+                }, 30000);
             }
             else {
                 ctx.reply("Ответ не верный! попробуй еще раз!")
@@ -85,26 +89,30 @@ bot.on("message", ctx => {
                 ctx.replyWithPhoto({ source: photoStream }, { caption: message });
                 setTimeout(() => {
                     ctx.reply("Вторая задачка и последняя. Гринч немного поколдавал, заметая следы - он оставил тебе только ОДНУ попытку отгадать задачку, СОБЕРИСЬ!")
-                }, 5000);
+                }, 7000);
                 setTimeout(() => {
                     const photoStream = fs.createReadStream('./imgs/zadacha2.jpg');
                     ctx.replyWithPhoto({ source: photoStream }, { caption: "Введите правильный ответ, у вас ОДНА попытка!" });
-                }, 10000);
+                }, 21000);
                 setTimeout(() => {
-                    // отправка видео где гринч ржет
+                    ctx.replyWithVideo({
+                    source: './videos/laught.mov'
+                }, {
+                    caption: replyText
+                });
                     user.state = 'inputRandom';
-                }, 12500);
+                }, 23500);
             } else {
                 ctx.reply("Ответ не верный! попробуй еще раз!")
             }
             break;
         }
         case "inputRandom": {
-            ctx.reply("Слава богу Гринч тупой и сам не знает ответ на эту загадку!\n Я могу найти твой подарок, но мне нужно чтобы ты снял магию Гринча, ПОЙ песню Дискотеки аварии - Новый год к нам МЧИТСЯ, СКОРЕЕ, ОТВЛЕКАЙ ЕГО!")
+            ctx.reply("Слава богу Гринч тупой и сам не знает ответ на эту загадку!\nЯ могу найти твой подарок, но мне нужно чтобы ты снял магию Гринча, ПОЙ песню Дискотеки аварии - Новый год к нам МЧИТСЯ, СКОРЕЕ, ОТВЛЕКАЙ ЕГО!")
             setTimeout(() => {
                 const photoStream = fs.createReadStream('./imgs/mesto.jpg');
                 ctx.replyWithPhoto({ source: photoStream }, { caption: "Отлично сработано, я нашел подарок! ВОТ ОН!!!" });
-            }, 15000);
+            }, 25000);
             break;
         }
 
