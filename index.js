@@ -35,7 +35,7 @@ bot.start((ctx) => {
     startMessage += 'Как похитить Рождество!\n'
     startMessage += 'И, конечно, он не принц.\n'
     startMessage += 'Одинокий, жуткий ...\n';
-    const photoStream = fs.createReadStream('.imgs/start.jpeg');
+    const photoStream = fs.createReadStream('./imgs/start.jpeg');
     ctx.replyWithPhoto({ source: photoStream }, { caption: startMessage });
 });
 
@@ -54,7 +54,7 @@ bot.on("message", ctx => {
                 let replyText = "Кажется кто-то хотел себе новый зарядник? теперь он МОЙ, ахахАХАХА!!!"
                 // отправка видео steal.mp4
                 setTimeout(() => {
-                    const photoStream = fs.createReadStream('.imgs/olen.png');
+                    const photoStream = fs.createReadStream('./imgs/olen.png');
                     let replyMessage2 = 'Привет\n я генномодифицированый пес санты!'
                     ctx.replyWithPhoto({ source: photoStream }, { caption: replyMessage2 });
                 }, 10000);
@@ -81,13 +81,13 @@ bot.on("message", ctx => {
             if (snegovikVerify(message)) {
                 user.state = "waiting";
                 let message = "Отлично, я вышел на след, Гринч спрятал подарок в этом доме!";
-                const photoStream = fs.createReadStream('.imgs/dom.png');
+                const photoStream = fs.createReadStream('./imgs/dom.png');
                 ctx.replyWithPhoto({ source: photoStream }, { caption: message });
                 setTimeout(() => {
                     ctx.reply("Вторая задачка и последняя. Гринч немного поколдавал, заметая следы - он оставил тебе только ОДНУ попытку отгадать задачку, СОБЕРИСЬ!")
                 }, 5000);
                 setTimeout(() => {
-                    const photoStream = fs.createReadStream('.imgs/zadacha2.jpg');
+                    const photoStream = fs.createReadStream('./imgs/zadacha2.jpg');
                     ctx.replyWithPhoto({ source: photoStream }, { caption: "Введите правильный ответ, у вас ОДНА попытка!" });
                 }, 10000);
                 setTimeout(() => {
@@ -102,7 +102,7 @@ bot.on("message", ctx => {
         case "inputRandom": {
             ctx.reply("Слава богу Гринч тупой и сам не знает ответ на эту загадку!\n Я могу найти твой подарок, но мне нужно чтобы ты снял магию Гринча, ПОЙ песню Дискотеки аварии - Новый год к нам МЧИТСЯ, СКОРЕЕ, ОТВЛЕКАЙ ЕГО!")
             setTimeout(() => {
-                const photoStream = fs.createReadStream('.imgs/mesto.jpg');
+                const photoStream = fs.createReadStream('./imgs/mesto.jpg');
                 ctx.replyWithPhoto({ source: photoStream }, { caption: "Отлично сработано, я нашел подарок! ВОТ ОН!!!" });
             }, 15000);
             break;
