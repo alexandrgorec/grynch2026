@@ -53,7 +53,7 @@ bot.on("message", ctx => {
                 user.state = "waiting";
                 let replyText = "Кажется кто-то хотел себе новый зарядник? теперь он МОЙ, ахахАХАХА!!!"
                 ctx.replyWithVideo({
-                    source: './videos/steal.mp4'
+                    source: './videos/steal.MP4'
                 }, {
                     caption: replyText
                 });
