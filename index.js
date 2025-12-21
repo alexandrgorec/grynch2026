@@ -98,7 +98,7 @@ bot.on("message", ctx => {
                     ctx.replyWithVideo({
                     source: './videos/laught.mov'
                 }, {
-                    caption: replyText
+                    caption: '🤡🤡🤡 УДАЧИ 🤡🤡🤡!'
                 });
                     user.state = 'inputRandom';
                 }, 23500);
