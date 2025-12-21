@@ -93,7 +93,7 @@ bot.on("message", ctx => {
                 setTimeout(() => {
                     const photoStream = fs.createReadStream('./imgs/zadacha2.jpg');
                     ctx.replyWithPhoto({ source: photoStream }, { caption: "Введите правильный ответ, у вас ОДНА попытка!" });
-                }, 21000);
+                }, 18500);
                 setTimeout(() => {
                     ctx.replyWithVideo({
                     source: './videos/laught.mov'
@@ -101,7 +101,7 @@ bot.on("message", ctx => {
                     caption: '🤡🤡🤡 УДАЧИ 🤡🤡🤡!'
                 });
                     user.state = 'inputRandom';
-                }, 23500);
+                }, 25500);
             } else {
                 ctx.reply("Ответ не верный! попробуй еще раз!")
             }
